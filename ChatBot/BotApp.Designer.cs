@@ -1,6 +1,6 @@
 ﻿namespace ChatBot
 {
-    partial class MyAPP
+    partial class BotApp
     {
         /// <summary>
         ///  Required designer variable.

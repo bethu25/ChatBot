@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace ChatBot
 {
-    internal class BotApp
+    public partial class BotApp : Form
     {
-
+        public BotApp()
+        {
+            InitializeComponent();
+        }
     }
 }
