@@ -13,6 +13,7 @@ namespace ChatBot
         public ResponseManager()
         {
 
+        
         }
     }
 }

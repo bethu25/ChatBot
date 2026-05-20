@@ -5,17 +5,22 @@ using System.Text;
 namespace ChatBot
 {
     internal class CyberBot
-    {  // Creating object from ResponseManager class
+    {  
+        // Creating object from ResponseManager class
         private ResponseManager manager = new ResponseManager();
 
-        // Variables for memory and conversation flow
-        private string lastTopic = "";
-        private string favouriteTopic = "";
+        // Dictionary with Lists
+        // Stores chatbot responses
+        private Dictionary<string, List<string>> responses = new Dictionary<string, List<string>>();
 
-        // Method for chatbot responses
-        public string GetResponse(string message)
-        {
-            
-        }
+        // Random object for random responses
+        Random random = new Random();
+
+        // Memory variables
+        private string userName = "";
+        private string favouriteTopic = "";
+        private string lastTopic = "";
+
+
     }
 }
