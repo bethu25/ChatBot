@@ -54,7 +54,23 @@ namespace ChatBot
             });
         }
 
-         
+        // Method to return random responses
+        public string GetRandomResponse(string topic)
+        {
+            // Check if topic exists
+            if (responses.ContainsKey(topic))
+            {
+                // Store list in variable
+                List<string> topicResponses = responses[topic];
 
+                // Generate random index
+                int index = random.Next(topicResponses.Count);
+
+                // Return random response
+                return topicResponses[index];
+            }
+
+            return "No response found.";
+        }
     }
 }
