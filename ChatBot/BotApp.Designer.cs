@@ -38,10 +38,11 @@
             // 
             btnSend.Location = new Point(619, 351);
             btnSend.Name = "btnSend";
-            btnSend.Size = new Size(112, 34);
+            btnSend.Size = new Size(112, 31);
             btnSend.TabIndex = 0;
             btnSend.Text = "SEND";
             btnSend.UseVisualStyleBackColor = true;
+            btnSend.Click += btnSend_Click;
             // 
             // lblTitle
             // 
@@ -62,12 +63,12 @@
             // 
             // txtUserInput
             // 
-            txtUserInput.Location = new Point(35, 354);
+            txtUserInput.Location = new Point(35, 351);
             txtUserInput.Name = "txtUserInput";
             txtUserInput.Size = new Size(592, 31);
             txtUserInput.TabIndex = 3;
             // 
-            // MyAPP
+            // BotApp
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -76,7 +77,7 @@
             Controls.Add(rtbChat);
             Controls.Add(lblTitle);
             Controls.Add(btnSend);
-            Name = "MyAPP";
+            Name = "BotApp";
             Text = "MyAPP";
             ResumeLayout(false);
             PerformLayout();
