@@ -79,6 +79,7 @@
             Controls.Add(btnSend);
             Name = "BotApp";
             Text = "MyAPP";
+            Load += BotApp_Load;
             ResumeLayout(false);
             PerformLayout();
         }
