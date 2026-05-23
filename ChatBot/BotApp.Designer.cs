@@ -41,7 +41,7 @@
             btnSend.BackColor = SystemColors.ButtonShadow;
             btnSend.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btnSend.ForeColor = Color.Black;
-            btnSend.Location = new Point(613, 351);
+            btnSend.Location = new Point(613, 388);
             btnSend.Name = "btnSend";
             btnSend.Size = new Size(247, 31);
             btnSend.TabIndex = 0;
@@ -68,9 +68,9 @@
             rtbChat.BackColor = SystemColors.InactiveCaption;
             rtbChat.Cursor = Cursors.IBeam;
             rtbChat.ForeColor = SystemColors.MenuText;
-            rtbChat.Location = new Point(12, 91);
+            rtbChat.Location = new Point(12, 104);
             rtbChat.Name = "rtbChat";
-            rtbChat.Size = new Size(848, 216);
+            rtbChat.Size = new Size(848, 260);
             rtbChat.TabIndex = 2;
             rtbChat.Text = "";
             // 
@@ -78,9 +78,9 @@
             // 
             txtUserInput.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtUserInput.BackColor = SystemColors.InactiveCaption;
-            txtUserInput.Location = new Point(12, 351);
+            txtUserInput.Location = new Point(12, 388);
             txtUserInput.Name = "txtUserInput";
-            txtUserInput.Size = new Size(595, 31);
+            txtUserInput.Size = new Size(603, 31);
             txtUserInput.TabIndex = 3;
             // 
             // BotApp
