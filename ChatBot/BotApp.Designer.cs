@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BotApp));
             btnSend = new Button();
             lblTitle = new Label();
             rtbChat = new RichTextBox();
@@ -36,49 +37,65 @@
             // 
             // btnSend
             // 
-            btnSend.Location = new Point(619, 351);
+            btnSend.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnSend.BackColor = SystemColors.ButtonShadow;
+            btnSend.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnSend.ForeColor = Color.Black;
+            btnSend.Location = new Point(613, 351);
             btnSend.Name = "btnSend";
-            btnSend.Size = new Size(112, 31);
+            btnSend.Size = new Size(247, 31);
             btnSend.TabIndex = 0;
             btnSend.Text = "SEND";
-            btnSend.UseVisualStyleBackColor = true;
+            btnSend.UseVisualStyleBackColor = false;
             btnSend.Click += btnSend_Click;
             // 
             // lblTitle
             // 
+            lblTitle.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblTitle.AutoSize = true;
-            lblTitle.Location = new Point(226, 9);
+            lblTitle.BackColor = SystemColors.ActiveCaptionText;
+            lblTitle.Font = new Font("Showcard Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.Cyan;
+            lblTitle.Location = new Point(281, 28);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(283, 25);
+            lblTitle.Size = new Size(334, 26);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "CYBERSECURITY AWARENESS BOT";
             // 
             // rtbChat
             // 
-            rtbChat.Location = new Point(35, 91);
+            rtbChat.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rtbChat.BackColor = SystemColors.InactiveCaption;
+            rtbChat.Cursor = Cursors.IBeam;
+            rtbChat.ForeColor = SystemColors.MenuText;
+            rtbChat.Location = new Point(12, 91);
             rtbChat.Name = "rtbChat";
-            rtbChat.Size = new Size(729, 144);
+            rtbChat.Size = new Size(848, 216);
             rtbChat.TabIndex = 2;
             rtbChat.Text = "";
             // 
             // txtUserInput
             // 
-            txtUserInput.Location = new Point(35, 351);
+            txtUserInput.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtUserInput.BackColor = SystemColors.InactiveCaption;
+            txtUserInput.Location = new Point(12, 351);
             txtUserInput.Name = "txtUserInput";
-            txtUserInput.Size = new Size(592, 31);
+            txtUserInput.Size = new Size(595, 31);
             txtUserInput.TabIndex = 3;
             // 
             // BotApp
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.ControlDark;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(896, 434);
             Controls.Add(txtUserInput);
             Controls.Add(rtbChat);
             Controls.Add(lblTitle);
             Controls.Add(btnSend);
             Name = "BotApp";
-            Text = "MyAPP";
+            Text = " MyApp";
             Load += BotApp_Load;
             ResumeLayout(false);
             PerformLayout();
