@@ -44,12 +44,13 @@ namespace ChatBot
 
         private void BotApp_Load(object sender, EventArgs e)
         {// Play WAV greeting
-            voice.PlayVoiceGreeting();
+            
 
             // Ask user for their name
             string name = Microsoft.VisualBasic.Interaction.InputBox(
                 "Please enter your name:",
                 "Cybersecurity Awareness Bot"
+               
             );
 
             // Input validation
@@ -60,7 +61,8 @@ namespace ChatBot
 
             // Save name into chatbot memory
             cyberbot.SetUserName(name);
-
+           
+            voice.PlayVoiceGreeting();
             // Display welcome message
             rtbChat.AppendText(
                 "Bot: Hello " + cyberbot.GetUserName() +
