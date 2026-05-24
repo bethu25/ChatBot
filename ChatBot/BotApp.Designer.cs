@@ -38,8 +38,8 @@
             // btnSend
             // 
             btnSend.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnSend.BackColor = SystemColors.ButtonShadow;
-            btnSend.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnSend.BackColor = SystemColors.ActiveCaption;
+            btnSend.Font = new Font("Felix Titling", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSend.ForeColor = Color.Black;
             btnSend.Location = new Point(613, 388);
             btnSend.Name = "btnSend";

@@ -14,36 +14,62 @@ namespace ChatBot
         private void btnSend_Click(object sender, EventArgs e)
         {
             // Get user message
-            string userMessage = txtUserInput.Text;
+            string message = txtUserInput.Text;
 
-            // Validation
-            if (string.IsNullOrWhiteSpace(userMessage))
+            // Prevent empty messages
+            if (message == "")
             {
-                MessageBox.Show("Please type a message.");
+                MessageBox.Show("Please enter a message.");
                 return;
             }
 
-            // Show user message
-            rtbChat.AppendText("You: " + userMessage + Environment.NewLine);
+            // Display user message
+            rtbChat.AppendText(
+                cyberbot.GetUserName() + ": " + message + "\n"
+            );
 
-            // Get chatbot response
-            string response = cyberbot.GetResponse(userMessage);
+            // Get bot response
+            string response = cyberbot.GetResponse(message);
 
-            // Show bot response
-            rtbChat.AppendText("Bot: " + response + Environment.NewLine + Environment.NewLine);
+            // Display response
+            rtbChat.AppendText(
+                "Bot: " + response + "\n\n"
+            );
 
             // Clear textbox
             txtUserInput.Clear();
-
         }
 
+        
+
         private void BotApp_Load(object sender, EventArgs e)
-        {
+        {// Play WAV greeting
             voice.PlayVoiceGreeting();
 
+            // Ask user for their name
+            string name = Microsoft.VisualBasic.Interaction.InputBox(
+                "Please enter your name:",
+                "Cybersecurity Awareness Bot"
+            );
+
+            // Input validation
+            if (name == "")
+            {
+                name = "User";
+            }
+
+            // Save name into chatbot memory
+            cyberbot.SetUserName(name);
+
+            // Display welcome message
             rtbChat.AppendText(
-                "Bot: Welcome to the Cybersecurity Awareness Bot!" +
-                Environment.NewLine + Environment.NewLine);
+                "Bot: Hello " + cyberbot.GetUserName() +
+                "! Welcome to the Cybersecurity Awareness Bot.\n"
+            );
+
+            rtbChat.AppendText(
+                "Bot: Feel free to ask me about passwords, scams, privacy or phishing.\n\n"
+            );
         }
  
     }

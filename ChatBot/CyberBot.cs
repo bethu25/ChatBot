@@ -5,50 +5,58 @@ using System.Text;
 namespace ChatBot
 {
     internal class CyberBot
-    {  
-        // object from ResponseManager class
+    {
+        // Object from ResponseManager class
         private ResponseManager manager = new ResponseManager();
 
-        // Memory variables
+        // MEMORY VARIABLES
+        // These variables store user information
         private string userName = "";
         private string favouriteTopic = "";
         private string lastTopic = "";
 
-        // This is Main chatbot method
+        // METHOD TO SAVE USER NAME
+        // This is used when the application starts
+        public void SetUserName(string name)
+        {
+            userName = name;
+        }
+
+        // METHOD TO RETURN USER NAME
+        public string GetUserName()
+        {
+            return userName;
+        }
+
+        // MAIN CHATBOT METHOD
         public string GetResponse(string message)
         {
-                   
-            // Makes keyword checking easier and Convert text to lowercase
+            // Convert message to lowercase
+            // Makes keyword recognition easier
             message = message.ToLower();
-           
+
+            // ==========================
             // MEMORY AND RECALL
-            if (message.Contains("my name is")) // Remember user's name
-            {
-                // Split sentence into words
-                string[] words = message.Split(' ');
-
-                // Store last word as name
-                userName = words[words.Length - 1];
-
-                return "Nice to meet you, " + userName + "!";
-            }
+            // ==========================
 
             // Remember favourite topic
-            else if (message.Contains("interested in privacy"))
+            if (message.Contains("interested in privacy"))
             {
                 favouriteTopic = "privacy";
 
                 return "Great! I will remember that you are interested in privacy.";
             }
 
-             // SENTIMENT DETECTION
-              
+            // ==========================
+            // SENTIMENT DETECTION
+            // ==========================
+
             else if (message.Contains("worried"))
             {
                 lastTopic = "scam";
 
-                return "It is understandable to feel worried about scams. " +
-                       manager.GetRandomResponse("scam");
+                return "It is understandable to feel worried about scams.\n"
+                     + manager.GetRandomResponse("scam");
             }
 
             else if (message.Contains("frustrated"))
@@ -61,11 +69,13 @@ namespace ChatBot
                 return "I am glad you are curious about cybersecurity!";
             }
 
-        
+            // ==========================
             // CONVERSATION FLOW
-                else if (message.Contains("tell me more") ||
-                    message.Contains("another tip") ||
-                    message.Contains("explain more"))
+            // ==========================
+
+            else if (message.Contains("tell me more") ||
+                     message.Contains("another tip") ||
+                     message.Contains("explain more"))
             {
                 // Continue previous topic
                 if (lastTopic != "")
@@ -76,38 +86,16 @@ namespace ChatBot
                 return "Please ask about a cybersecurity topic first.";
             }
 
-          
+            // ==========================
             // KEYWORD RECOGNITION
- 
-            // Password
+            // ==========================
+
+            // PASSWORD
             else if (message.Contains("password"))
             {
                 lastTopic = "password";
 
-                return manager.GetRandomResponse("password");
-            }
-
-            // Scam
-            else if (message.Contains("scam"))
-            {
-                lastTopic = "scam";
-
-                return manager.GetRandomResponse("scam");
-            }
-
-            // Privacy
-            else if (message.Contains("privacy"))
-            {
-                lastTopic = "privacy";
-
-                string response = manager.GetRandomResponse("privacy");
-
-                // Personalised memory response
-                if (favouriteTopic == "privacy")
-                {
-                    response += "\nAs someone interested in privacy, " +
-                                "you should review your account settings regularly.";
-                }
+                string response = manager.GetRandomResponse("password");
 
                 // Personalised name recall
                 if (userName != "")
@@ -118,46 +106,87 @@ namespace ChatBot
                 return response;
             }
 
-            // Phishing
+            // SCAM
+            else if (message.Contains("scam"))
+            {
+                lastTopic = "scam";
+
+                string response = manager.GetRandomResponse("scam");
+
+                // Personalised name recall
+                if (userName != "")
+                {
+                    response += "\nBe careful online, " + userName + ".";
+                }
+
+                return response;
+            }
+
+            // PRIVACY
+            else if (message.Contains("privacy"))
+            {
+                lastTopic = "privacy";
+
+                string response = manager.GetRandomResponse("privacy");
+
+                // MEMORY RECALL
+                if (favouriteTopic == "privacy")
+                {
+                    response += "\nAs someone interested in privacy, "
+                             + "you should review your account settings regularly.";
+                }
+
+                // USER NAME RECALL
+                if (userName != "")
+                {
+                    response += "\nStay safe online, " + userName + "!";
+                }
+
+                return response;
+            }
+
+            // PHISHING
             else if (message.Contains("phishing"))
             {
                 lastTopic = "phishing";
 
-                return manager.GetRandomResponse("phishing");
-            }
+                string response = manager.GetRandomResponse("phishing");
 
-  
-            // GREETING
-     
-
-            else if (message.Contains("hello") ||
-                     message.Contains("hi"))
-            {
+                // USER NAME RECALL
                 if (userName != "")
                 {
-                    return "Hello again, " + userName + "!";
+                    response += "\nAlways stay alert, " + userName + ".";
                 }
 
-                return "Hello! Ask me about passwords, scams, privacy or phishing.";
+                return response;
             }
 
-            // EXIT
+            // ==========================
+            // GREETINGS
+            // ==========================
 
-            else if (message.Contains("bye") ||
-                     message.Contains("exit"))
+            else if (message.Contains("hello") || message.Contains("hi"))
             {
-                return "Goodbye! Stay safe online.";
+                return "Hello again, " + userName +
+                       "! Feel free to ask me anything about passwords, scams, privacy or phishing.";
             }
 
-  
+            // ==========================
+            // EXIT
+            // ==========================
+
+            else if (message.Contains("bye") || message.Contains("exit"))
+            {
+                return "Goodbye " + userName + "! Stay safe online.";
+            }
+            // ==========================
             // ERROR HANDLING
-    
+            // ==========================
+
             else
             {
                 return "I am not sure I understand. Can you try rephrasing?";
             }
         }
-
     }
- }
-
+}
