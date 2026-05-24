@@ -34,28 +34,32 @@ namespace ChatBot
             // Convert message to lowercase
             // Makes keyword recognition easier
             message = message.ToLower();
-
-            // ==========================
+ 
             // MEMORY AND RECALL
-            // ==========================
+          
 
             // Remember favourite topic
-            if (message.Contains("interested in privacy"))
+            if (message.Contains("my favourite topic is"))
             {
-                favouriteTopic = "privacy";
+                // Remove unnecessary words from the sentence
+                favouriteTopic = message.Replace(
+                    "my favourite topic is", "").Trim();
 
-                return "Great! I will remember that you are interested in privacy.";
+                // Save as last topic
+                lastTopic = favouriteTopic;
+
+                return "Great! I will remember that your favourite topic is "
+                       + favouriteTopic + ".";
             }
 
-            // ==========================
+   
             // SENTIMENT DETECTION
-            // ==========================
 
             else if (message.Contains("worried"))
             {
                 lastTopic = "scam";
 
-                return "It is understandable to feel worried about scams.\n"
+                return "It is understandable to feel worried,especially when percentage of scams is growing dsy by day.\n"
                      + manager.GetRandomResponse("scam");
             }
 
@@ -69,9 +73,7 @@ namespace ChatBot
                 return "I am glad you are curious about cybersecurity!";
             }
 
-            // ==========================
             // CONVERSATION FLOW
-            // ==========================
 
             else if (message.Contains("tell me more") ||
                      message.Contains("another tip") ||
@@ -86,11 +88,7 @@ namespace ChatBot
                 return "Please ask about a cybersecurity topic first.";
             }
 
-            // ==========================
             // KEYWORD RECOGNITION
-            // ==========================
-
-            // PASSWORD
             else if (message.Contains("password"))
             {
                 lastTopic = "password";
@@ -100,7 +98,7 @@ namespace ChatBot
                 // Personalised name recall
                 if (userName != "")
                 {
-                    response += "\nStay safe online, " + userName + "!";
+                    response += "\nIt is important to stay safe online, " + userName + "!";
                 }
 
                 return response;
@@ -161,28 +159,25 @@ namespace ChatBot
                 return response;
             }
 
-            // ==========================
+ 
             // GREETINGS
-            // ==========================
-
+ 
             else if (message.Contains("hello") || message.Contains("hi"))
             {
                 return "Hello again, " + userName +
                        "! Feel free to ask me anything about passwords, scams, privacy or phishing.";
             }
 
-            // ==========================
+          
             // EXIT
-            // ==========================
 
             else if (message.Contains("bye") || message.Contains("exit"))
             {
                 return "Goodbye " + userName + "! Stay safe online.";
             }
-            // ==========================
+          
             // ERROR HANDLING
-            // ==========================
-
+             
             else
             {
                 return "I am not sure I understand. Can you try rephrasing?";
