@@ -82,21 +82,7 @@ The chatbot uses Lists and Random objects to return different responses each tim
 
 Example:
 
-```
-User: Give me a phishing tip
-
-Bot: Phishing emails often create urgency.
-```
-
-Another time:
-
-```
-Bot: Never enter passwords on suspicious websites.
-```
-
-This makes the chatbot more dynamic and realistic.
-
----
+ ![Image Alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-05-28%20162948.png?raw=true)
 
 ## 5. Memory and Recall
 
