@@ -66,10 +66,11 @@
             // 
             rtbChat.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rtbChat.BackColor = SystemColors.InactiveCaption;
-            rtbChat.Cursor = Cursors.IBeam;
+            rtbChat.Cursor = Cursors.Default;
             rtbChat.ForeColor = SystemColors.MenuText;
             rtbChat.Location = new Point(12, 104);
             rtbChat.Name = "rtbChat";
+            rtbChat.ReadOnly = true;
             rtbChat.Size = new Size(848, 260);
             rtbChat.TabIndex = 2;
             rtbChat.Text = "";
@@ -87,6 +88,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = SystemColors.ControlDark;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(896, 434);
@@ -94,6 +96,7 @@
             Controls.Add(rtbChat);
             Controls.Add(lblTitle);
             Controls.Add(btnSend);
+            Cursor = Cursors.IBeam;
             Name = "BotApp";
             Text = " MyApp";
             Load += BotApp_Load;

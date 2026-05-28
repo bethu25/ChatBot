@@ -1,334 +1,511 @@
  ChatBot for South Africa citizens 
+ 
+## Project Overview
 
- Project Overview
-
-The Cybersecurity Awareness Bot is a Windows Forms (WinForms) chatbot application developed in C#. The purpose of the chatbot is to educate users about cybersecurity topics such as passwords, scams, privacy, and phishing.
+The Cybersecurity Awareness Bot is a Windows Forms (WinForms) chatbot application developed in C#. The purpose of this application is to educate users about cybersecurity topics such as passwords, scams, phishing, and privacy.
 
 The chatbot uses:
 
-Keyword recognition
-Random responses
-Memory and recall
-Sentiment detection
-Conversation flow
-Error handling
-Object-Oriented Programming (OOP)
+* GUI interaction using Windows Forms
+* Keyword recognition
+* Random responses
+* Sentiment detection
+* Memory and recall
+* Conversation flow
+* WAV voice greeting
+* Dictionaries and Lists for data storage
+* Object-Oriented Programming principles
 
-The application also includes:
+This project was created for Part 2 of the Cybersecurity Awareness Chatbot assignment.
 
-GUI interface
-Voice greeting using WAV audio
-Personalized chatbot responses
-User memory features
-Features
-1. Keyword Recognition
 
-The chatbot recognizes cybersecurity keywords such as:
 
-Password
-Scam
-Privacy
-Phishing
+# Features
 
-Example:
+## 1. GUI Interface
 
-User: Tell me about passwords
-Bot: Use strong passwords with letters, numbers and symbols.
+The chatbot uses a graphical user interface built with Windows Forms.
 
-2. Random Responses
+### GUI Components
 
-The chatbot uses random responses to make conversations less repetitive.
+* RichTextBox for displaying conversations
+* TextBox for user input
+* Send Button
+* Labels and colours for user-friendly design
 
-Example:
+The GUI was designed to be:
 
-User: Tell me about phishing
-Bot: Check email addresses carefully before clicking links.
+* Simple
+* Beginner friendly
+* Easy to read
+* Interactive
 
-OR
 
-Bot: Never enter passwords on suspicious websites.
-3. Memory and Recall
 
-The chatbot remembers:
-
-User name
-Favourite cybersecurity topic
-Previous discussion topic
-
-Example:
-
-User: My favourite topic is privacy
-Bot: Great! I will remember that your favourite topic is privacy.
-
-Later:
-
-User: Tell me about privacy
-Bot: As someone interested in privacy, you should review your account settings regularly.
-4. Sentiment Detection
-
-The chatbot detects emotions such as:
-
-Worried
-Curious
-Frustrated
-
-Example:
-
-User: I am worried about scams
-Bot: It is understandable to feel worried...
-5. Conversation Flow
-
-The chatbot remembers the previous topic and continues the conversation naturally.
-
-Example:
-
-User: Tell me more
-Bot: Use different passwords for different accounts.
-6. Voice Greeting
+## 2. Voice Greeting
 
 The chatbot plays a WAV audio greeting when the application starts.
 
-7. GUI Design
+The audio is played using:
 
-The project includes:
+```
+System.Media.SoundPlayer
+```
 
-Background image
-Chat area
-User input textbox
-Send button
-Cybersecurity-themed design
-Technologies Used
-C#
-.NET Windows Forms
-Visual Studio
-OOP Principles
-Dictionaries
-Lists
-Random class
-SoundPlayer class
-Project Structure
-ChatBot
-│
-├── BotApp.cs
-├── CyberBot.cs
-├── ResponseManager.cs
-├── Voice.cs
-├── Assets
-│  
-└── Greeting.wav
-Class Descriptions
-1. BotApp.cs
+Example:
 
-This is the main GUI form.
+```
+SoundPlayer player = new SoundPlayer("Assets/Greeting.wav");
+player.PlaySync();
+```
 
-Responsibilities:
+---
 
-Displays chatbot interface
-Handles button clicks
-Displays messages
-Plays voice greeting
-Asks user for name
-2. CyberBot.cs
+## 3. Keyword Recognition
 
-This class contains the chatbot logic.
+The chatbot recognises cybersecurity-related keywords and responds appropriately.
 
-Responsibilities:
+### Supported Topics
 
-Keyword recognition
-Memory and recall
-Sentiment detection
-Conversation flow
-Personalized responses
-3. ResponseManager.cs
+* Password
+* Scam
+* Privacy
+* Phishing
 
-This class manages all chatbot responses.
+Example:
 
-Responsibilities:
+```
+User: Tell me about password safety
 
-Stores responses using Dictionary and List
-Returns random responses
-Organizes chatbot topics
-4. Voice.cs
+Bot: Use strong passwords with letters, numbers and symbols.
+```
 
-This class handles audio playback.
+---
 
-Responsibilities:
+## 4. Random Responses
 
-Plays WAV greeting file
-Handles audio errors
-Setup Instructions
-Requirements
+The chatbot uses Lists and Random objects to return different responses each time.
 
-Before running the project, install:
+Example:
 
+```
+User: Give me a phishing tip
+
+Bot: Phishing emails often create urgency.
+```
+
+Another time:
+
+```
+Bot: Never enter passwords on suspicious websites.
+```
+
+This makes the chatbot more dynamic and realistic.
+
+---
+
+## 5. Memory and Recall
+
+The chatbot remembers:
+
+* User name
+* Favourite cybersecurity topic
+
+### Example
+
+```text
+User: My favourite topic is phishing
+
+Bot: Great! I will remember that your favourite topic is phishing.
+```
+
+Later:
+
+```
+User: What is my favourite topic?
+
+Bot: Your favourite topic is phishing.
+```
+
+The chatbot also remembers the user's name:
+
+```
+User: What is my name?
+
+Bot: Your name is John.
+```
+
+---
+
+## 6. Sentiment Detection
+
+The chatbot detects emotions such as:
+
+* Worried
+* Curious
+* Frustrated
+
+The chatbot responds naturally by asking follow-up questions.
+
+### Example
+
+```
+User: I am worried
+
+Bot: I am sorry to hear that, John. What are you worried about?
+```
+
+```
+User: Passwords
+
+Bot: Do not worry too much, John. Here is a password safety tip:
+Use strong passwords with letters, numbers and symbols.
+```
+
+This creates a more human-like conversation.
+
+---
+
+## 7. Conversation Flow
+
+The chatbot continues conversations naturally.
+
+Example:
+
+```text
+User: Tell me more
+
+Bot: Never share your password with anyone.
+```
+
+The chatbot remembers the last discussed topic using:
+
+```
+lastTopic
+```
+
+---
+
+## 8. Error Handling
+
+The chatbot handles unknown input safely.
+
+Example:
+
+```
+User: asdfghj
+
+Bot: I am not sure I understand. Can you try rephrasing?
+```
+
+This prevents crashes and improves user experience.
+
+---
+
+# Technologies Used
+
+## Programming Language
+
+* C#
+
+## Framework
+
+* .NET Windows Forms (WinForms)
+
+## Libraries Used
+
+* System.Collections.Generic
+* System.Media
+* System.Windows.Forms
+
+---
+
+# Project Structure
+
+## BotApp.cs
+
+Handles:
+
+* GUI interaction
+* Button click events
+* Displaying messages
+* Playing voice greeting
+
+---
+
+## CyberBot.cs
+
+Handles:
+
+* Chatbot logic
+* Sentiment detection
+* Memory and recall
+* Conversation flow
+* Keyword recognition
+
+---
+
+## ResponseManager.cs
+
+Handles:
+
+* Definitions
+* Random cybersecurity tips
+* Dictionaries and Lists
+
+---
+
+## Voice.cs
+
+Handles:
+
+* WAV audio playback
+
+---
+
+# Setup Instructions
+
+## Step 1 – Open the Project
+
+Open the solution in:
+
+```
 Visual Studio 2022
-.NET Framework / .NET Windows Forms Support
-How to Run the Project
-Step 1: Open the Project
-Open Visual Studio
-Click:
-Open a project or solution
-Select the ChatBot project folder
-Step 2: Add the Audio File
+```
+
+---
+
+## Step 2 – Restore Packages
+
+Allow Visual Studio to restore project dependencies automatically.
+
+---
+
+## Step 3 – Add WAV File
 
 Create a folder named:
 
+```
 Assets
+```
 
-Inside the project directory.
+Inside the project.
 
 Add:
 
+```text
 Greeting.wav
+```
 
-Example:
+Example path:
 
-ChatBot
-│
-├── Assets
-│  
-└── Greeting.wav
-Step 3: Configure Audio File
-In Solution Explorer:
-Right-click Greeting.wav
-Select Properties
-Set:
-Build Action = Content
-Copy to Output Directory = Copy if newer
-Step 4: Run the Application
+```
+ChatBot/Assets/Greeting.wav
+```
+
+---
+
+## Step 4 – Build the Project
+
+In Visual Studio:
+
+```
+Build > Build Solution
+```
+
+Shortcut:
+
+```
+Ctrl + Shift + B
+```
+
+---
+
+## Step 5 – Run the Project
 
 Press:
 
+```
 F5
+```
 
-OR
+or click:
 
-Click:
-
+```text
 Start
-How the Application Works
-Application Startup
+```
+
+---
+
+# How to Use the Application
+
+## Starting the Bot
 
 When the application starts:
 
-Voice greeting plays
-User enters their name
-Welcome message appears
+1. The voice greeting plays
+2. The bot asks for the user's name
+3. The chatbot welcomes the user
 
 Example:
 
-Bot: Hello Username! Welcome to the Cybersecurity Awareness Bot.
-Bot: Feel free to ask me about passwords, scams, privacy or phishing.
-Usage Examples
-Greeting Example
-User: hello
-Bot: Hello again, Username! Feel free to ask me anything about passwords, scams, privacy or phishing.
-Password Example
-User: tell me about passwords
-Bot: Use strong passwords with letters, numbers and symbols.
-Scam Example
-User: scams
-Bot: Scammers often pretend to be trusted companies.
-Privacy Example
-User: privacy
-Bot: Review your privacy settings regularly.
-Phishing Example
-User: phishing
-Bot: Never enter passwords on suspicious websites.
-Favourite Topic Example
-User: my favourite topic is privacy
-Bot: Great! I will remember that your favourite topic is privacy.
-Sentiment Example
-User: I am worried about scams
-Bot: It is understandable to feel worried...
-Conversation Flow Example
-User: tell me more
-Bot: Use different passwords for different accounts.
-Exit Example
-User: bye
-Bot: Goodbye Username! Stay safe online.
-OOP Concepts Used
-Encapsulation
+```
+Hello John! Welcome to the Cybersecurity Awareness Bot.
+Feel free to ask me anything about passwords, scams, privacy or phishing.
+```
 
-Classes store data and methods together.
+---
 
-Example:
+# Example Commands
 
-private string userName = "";
-Objects
+## Asking About Passwords
 
-Objects are created from classes.
+```
+Tell me about passwords
+```
 
-Example:
+---
 
-private CyberBot cyberbot = new CyberBot();
-Methods
+## Asking for Definitions
 
-Methods perform specific tasks.
+```
+What is phishing?
+```
 
-Example:
+```
+Define privacy
+```
 
+---
+
+## Asking for More Information
+
+```
+Tell me more
+```
+
+```
+Another tip
+```
+
+---
+
+## Saving Favourite Topic
+
+```
+My favourite topic is phishing
+```
+
+---
+
+## Recall Favourite Topic
+
+```
+What is my favourite topic?
+```
+
+---
+
+## Recall User Name
+
+```
+What is my name?
+```
+
+---
+
+## Sentiment Detection
+
+```
+I am worried
+```
+
+```
+I am frustrated
+```
+
+```
+I am curious
+```
+
+---
+
+## Exit Conversation
+
+```
+Bye
+```
+
+Output:
+
+```
+Goodbye John! Stay safe online.
+```
+
+---
+
+# Object-Oriented Programming Concepts Used
+
+## Classes
+
+* BotApp
+* CyberBot
+* ResponseManager
+* Voice
+
+---
+
+## Methods
+
+Examples:
+
+```
 GetResponse()
-Data Structures Used
-Dictionary
+GetRandomTip()
+PlayVoiceGreeting()
+SetUserName()
+```
 
-Used to store chatbot topics and responses.
+---
+
+## Encapsulation
+
+Variables such as:
+
+```
+userName
+favouriteTopic
+```
+
+are stored inside classes and controlled using methods.
+
+---
+
+## Collections
+
+The project uses:
+
+* Dictionary
+* List
 
 Example:
 
+```
 Dictionary<string, List<string>>
-List
+```
 
-Used to store multiple responses for each topic.
+---
 
-Example:
+# Conclusion
 
-List<string>
-Error Handling
+The Cybersecurity Awareness Bot successfully demonstrates:
 
-The chatbot prevents:
+* GUI development
+* Cybersecurity education
+* Sentiment detection
+* Memory and recall
+* Dynamic responses
+* Conversation flow
+* Object-Oriented Programming
 
-Application crashes
-Empty user messages
-Missing audio file errors
-Unknown input failures
-
-Example:
-
-Bot: I am not sure I understand. Can you try rephrasing?
-GUI Design Features
-
-The GUI includes:
-
-Cybersecurity-themed background
-Styled title
-RichTextBox for conversation
-TextBox for user input
-Send button
-Proper spacing and alignment
-Possible Improvements
-
-Future improvements may include:
-
-AI integration
-Database storage
-Voice recognition
-More cybersecurity topics
-Dark mode
-Better animations
-Author
-Cybersecurity Awareness Bot
-Developed using C# Windows Forms
-
-Conclusion
-
-This project demonstrates:
-
-GUI development
-OOP programming
-Event-driven programming
-Data structures
-User interaction
-Cybersecurity education
-
-The chatbot provides users with cybersecurity awareness tips while maintaining natural and personalized conversations.
+The chatbot provides an engaging and beginner friendly way for users to learn cybersecurity awareness.

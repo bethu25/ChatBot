@@ -40,8 +40,7 @@ namespace ChatBot
             txtUserInput.Clear();
         }
 
-        
-
+         
         private void BotApp_Load(object sender, EventArgs e)
         {// Play WAV greeting
             
@@ -54,7 +53,7 @@ namespace ChatBot
             );
 
             // Input validation
-            if (name == "")
+            if (string.IsNullOrWhiteSpace(name))
             {
                 name = "User";
             }
@@ -62,7 +61,7 @@ namespace ChatBot
             // Save name into chatbot memory
             cyberbot.SetUserName(name);
            
-            voice.PlayVoiceGreeting();
+            //voice.PlayVoiceGreeting();
             // Display welcome message
             rtbChat.AppendText(
                 "Bot: Hello " + cyberbot.GetUserName() +

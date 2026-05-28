@@ -6,71 +6,93 @@ namespace ChatBot
 {
     internal class ResponseManager
     {
-        // Dictionary stores keywords and their responses
-        public Dictionary<string, List<string>> responses = new Dictionary<string, List<string>>();
+        // DEFINITIONS
+        private Dictionary<string, string> definitions =
+            new Dictionary<string, string>();
 
-        // Random object
+        // TIPS / RESPONSES
+        private Dictionary<string, List<string>> tips =
+            new Dictionary<string, List<string>>();
+
+        // Random response object
         Random random = new Random();
 
         // Constructor
         public ResponseManager()
         {
- 
-            // Password responses
-            responses.Add("password", new List<string>()
-            {  "A Password is a secret combination of characters used to verify your identity and grant access to a computer system,line account, or other secured resource.  ",
-                "Here are some password tips:", 
+            // PASSWORD
+            definitions.Add("password",
+                "A password is a secret combination of characters used to verify your identity and protect your accounts.");
+
+            tips.Add("password", new List<string>()
+            {
                 "Use strong passwords with letters, numbers and symbols.",
                 "Avoid using personal information in passwords.",
-                "Use different passwords for different accounts."
+                "Use different passwords for different accounts.",
+                "Change your passwords regularly."
             });
 
-            // Scam responses
-            responses.Add("scam", new List<string>()
-            {  "Email (Electronic mail) is a mode of exchanging messages among people through electronic devices.",
-                "Safety tips:",
+            // SCAM
+            definitions.Add("scam",
+                "A scam is a dishonest scheme used to trick people into giving away money or personal information.");
+
+            tips.Add("scam", new List<string>()
+            {
                 "Do not click suspicious email links.",
                 "Scammers often pretend to be trusted companies.",
-                "Always verify messages before sharing information."
+                "Always verify messages before sharing information.",
+                "Be careful of offers that sound too good to be true."
             });
 
-            // Privacy responses
-            responses.Add("privacy", new List<string>()
-            {   "a state in which one is not observed or disturbed by other people",
-                "Tips to obtain privacy:",
+            // PRIVACY
+            definitions.Add("privacy",
+                "Privacy is the ability to keep your personal information safe from others.");
+
+            tips.Add("privacy", new List<string>()
+            {
                 "Review your privacy settings regularly.",
                 "Do not share personal information online.",
-                "Keep your social media accounts private."
+                "Keep your social media accounts private.",
+                "Use two-factor authentication for extra security."
             });
 
-            // Phishing responses
-            responses.Add("phishing", new List<string>()
+            // PHISHING
+            definitions.Add("phishing",
+                "Phishing is a cyberattack where scammers pretend to be trusted organizations to steal information.");
+
+            tips.Add("phishing", new List<string>()
             {
-                "Phishing is a type of cyberattack where attackers deceive individuals into revealing sensitive information or installing malware by impersonating trusted sources.",
-                "Safty tips:",
                 "Check email addresses carefully before clicking links.",
                 "Phishing emails often create urgency.",
-                "Never enter passwords on suspicious websites."
+                "Never enter passwords on suspicious websites.",
+                "Avoid downloading unknown attachments."
             });
         }
 
-        // Method to return random responses
-        public string GetRandomResponse(string topic)
+        // GET DEFINITION
+        public string GetDefinition(string topic)
         {
-            // Check if topic exists
-            if (responses.ContainsKey(topic))
+            if (definitions.ContainsKey(topic))
             {
-                // Store list in variable
-                List<string> topicResponses = responses[topic];
-
-                // Generate random index
-                int index = random.Next(topicResponses.Count);
-
-                // Return random response
-                return topicResponses[index];
+                return definitions[topic];
             }
 
-            return "No response found.";
+            return "Definition not found.";
+        }
+
+        // GET RANDOM TIP
+        public string GetRandomTip(string topic)
+        {
+            if (tips.ContainsKey(topic))
+            {
+                List<string> topicTips = tips[topic];
+
+                int index = random.Next(topicTips.Count);
+
+                return topicTips[index];
+            }
+
+            return "No tips found.";
         }
     }
 }
