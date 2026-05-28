@@ -105,43 +105,15 @@ The chatbot detects emotions such as:
 The chatbot responds naturally by asking follow-up questions.
 
 ### Example
-
-```
-User: I am worried
-
-Bot: I am sorry to hear that, John. What are you worried about?
-```
-
-```
-User: Passwords
-
-Bot: Do not worry too much, John. Here is a password safety tip:
-Use strong passwords with letters, numbers and symbols.
-```
-
-This creates a more human-like conversation.
-
----
-
+ ![Image Alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-05-28%20163137.png?raw=true)
+ 
 ## 7. Conversation Flow
 
 The chatbot continues conversations naturally.
 
 Example:
 
-```text
-User: Tell me more
-
-Bot: Never share your password with anyone.
-```
-
-The chatbot remembers the last discussed topic using:
-
-```
-lastTopic
-```
-
----
+ ![Image Alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-05-28%20161910.png?raw=true)
 
 ## 8. Error Handling
 
@@ -250,7 +222,7 @@ Inside the project.
 
 Add:
 
-```text
+```
 Greeting.wav
 ```
 
