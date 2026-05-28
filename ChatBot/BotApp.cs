@@ -61,7 +61,7 @@ namespace ChatBot
             // Save name into chatbot memory
             cyberbot.SetUserName(name);
            
-            //voice.PlayVoiceGreeting();
+            voice.PlayVoiceGreeting();// play the welcome message as a voice greeting
             // Display welcome message
             rtbChat.AppendText(
                 "Bot: Hello " + cyberbot.GetUserName() +
