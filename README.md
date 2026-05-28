@@ -92,30 +92,7 @@ The chatbot remembers:
 * Favourite cybersecurity topic
 
 ### Example
-
-```text
-User: My favourite topic is phishing
-
-Bot: Great! I will remember that your favourite topic is phishing.
-```
-
-Later:
-
-```
-User: What is my favourite topic?
-
-Bot: Your favourite topic is phishing.
-```
-
-The chatbot also remembers the user's name:
-
-```
-User: What is my name?
-
-Bot: Your name is John.
-```
-
----
+ ![Image Alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-05-28%20162835.png?raw=true)
 
 ## 6. Sentiment Detection
 
