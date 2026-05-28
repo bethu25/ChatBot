@@ -74,13 +74,7 @@ The chatbot recognises cybersecurity-related keywords and responds appropriately
 
 Example:
 
-```
-User: Tell me about password safety
-
-Bot: Use strong passwords with letters, numbers and symbols.
-```
-
----
+![Image Alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-05-28%20162254.png?raw=true )  
 
 ## 4. Random Responses
 
