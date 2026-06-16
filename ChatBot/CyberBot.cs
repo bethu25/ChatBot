@@ -83,34 +83,6 @@ namespace ChatBot
                 return "I do not know your name yet.";
             }
 
-            // BOT REMEMBERS USER FAVOURITE TOPIC
-            else if (message.Contains("what is my favourite topic") ||
-                     message.Contains("what's my favourite topic") ||
-                     message.Contains("do you remember my favourite topic"))
-            {
-                // Check if favourite topic exists
-                if (favouriteTopic != "")
-                {
-                    return "Your favourite topic is " + favouriteTopic + ".";
-                }
-
-                return "You have not told me your favourite topic yet.";
-            }
-
-            // BOT REMEMBERS USER NAME
-            else if (message.Contains("what is my name") ||
-                     message.Contains("what's my name") ||
-                     message.Contains("do you remember my name"))
-            {
-                // Check if user name exists
-                if (userName != "")
-                {
-                    return "Your name is " + userName + ".";
-                }
-
-                return "I do not know your name yet.";
-            }
-
             // SENTIMENT DETECTION
 
             // USER IS WORRIED
