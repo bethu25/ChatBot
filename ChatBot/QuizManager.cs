@@ -11,8 +11,8 @@ namespace ChatBot
     // and controls moving between questions.
     internal class QuizManager
     {
+ 
 
-       
 
     }
 }

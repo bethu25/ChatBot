@@ -11,6 +11,19 @@ namespace ChatBot
     internal class DatabaseConnection
     {
 
-         
+        // Connection string contains the information required
+        // to connect to the CyberBotDB database
+        private string connectionString =
+        "server=localhost;database=CyberBotDB;uid=root;password=Mok@kole25;";
+
+
+        // This method returns an openable database connection
+        // Other classes can use this method when they need
+        // to communicate with MySQL
+        public MySqlConnection GetConnection()
+        {
+            return new MySqlConnection(connectionString);
+        }
+
     }
 }
