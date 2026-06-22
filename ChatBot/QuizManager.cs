@@ -12,7 +12,5 @@ namespace ChatBot
     internal class QuizManager
     {
  
-
-
     }
 }
