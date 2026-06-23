@@ -13,7 +13,35 @@ namespace ChatBot
     internal class ActivityLogger
     {
 
-  
+ 
+        // Stores logs
+        private List<string> logs =
+        new List<string>();
+
+
+
+        // Add new action
+
+        public void AddLog(string action)
+        {
+
+            logs.Add(
+            DateTime.Now +
+            " - " +
+            action);
+
+        }
+ 
+
+
+        // Return logs to GUI
+
+        public List<string> GetLogs()
+        {
+
+            return logs;
+
+        }
 
 
     }

@@ -36,6 +36,7 @@
             tabWindow = new TabControl();
             tabChat = new TabPage();
             tabTasks = new TabPage();
+            dateTimePicker1 = new DateTimePicker();
             dgvTasks = new DataGridView();
             btnAddTask = new Button();
             txtDescription = new TextBox();
@@ -52,7 +53,6 @@
             tabActivity = new TabPage();
             btnShowLogs = new Button();
             lstActivityLog = new ListBox();
-            dateTimePicker1 = new DateTimePicker();
             tabWindow.SuspendLayout();
             tabChat.SuspendLayout();
             tabTasks.SuspendLayout();
@@ -64,7 +64,7 @@
             // btnSend
             // 
             btnSend.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnSend.BackColor = SystemColors.ActiveCaption;
+            btnSend.BackColor = SystemColors.ButtonFace;
             btnSend.Font = new Font("Felix Titling", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSend.ForeColor = Color.Black;
             btnSend.Location = new Point(750, 288);
@@ -82,7 +82,7 @@
             lblTitle.BackColor = SystemColors.ActiveCaptionText;
             lblTitle.Font = new Font("Showcard Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.Cyan;
-            lblTitle.Location = new Point(517, 9);
+            lblTitle.Location = new Point(506, 19);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(334, 26);
             lblTitle.TabIndex = 1;
@@ -91,19 +91,19 @@
             // rtbChat
             // 
             rtbChat.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            rtbChat.BackColor = SystemColors.InactiveCaption;
+            rtbChat.BackColor = SystemColors.ControlText;
             rtbChat.ForeColor = SystemColors.MenuText;
             rtbChat.Location = new Point(6, 8);
             rtbChat.Name = "rtbChat";
             rtbChat.ReadOnly = true;
-            rtbChat.Size = new Size(998, 229);
+            rtbChat.Size = new Size(998, 274);
             rtbChat.TabIndex = 2;
             rtbChat.Text = "";
             // 
             // txtUserInput
             // 
             txtUserInput.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtUserInput.BackColor = SystemColors.InactiveCaption;
+            txtUserInput.BackColor = SystemColors.InactiveBorder;
             txtUserInput.Location = new Point(6, 288);
             txtUserInput.Name = "txtUserInput";
             txtUserInput.Size = new Size(738, 31);
@@ -123,6 +123,7 @@
             // 
             // tabChat
             // 
+            tabChat.BackColor = Color.Black;
             tabChat.Controls.Add(rtbChat);
             tabChat.Controls.Add(txtUserInput);
             tabChat.Controls.Add(btnSend);
@@ -132,7 +133,6 @@
             tabChat.Size = new Size(1007, 347);
             tabChat.TabIndex = 0;
             tabChat.Text = "Chatbot";
-            tabChat.UseVisualStyleBackColor = true;
             // 
             // tabTasks
             // 
@@ -148,6 +148,13 @@
             tabTasks.TabIndex = 1;
             tabTasks.Text = "Task Assistant";
             tabTasks.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(75, 127);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(300, 31);
+            dateTimePicker1.TabIndex = 5;
             // 
             // dgvTasks
             // 
@@ -307,13 +314,6 @@
             lstActivityLog.Name = "lstActivityLog";
             lstActivityLog.Size = new Size(642, 279);
             lstActivityLog.TabIndex = 0;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(75, 127);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(300, 31);
-            dateTimePicker1.TabIndex = 5;
             // 
             // BotApp
             // 
