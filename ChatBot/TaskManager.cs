@@ -13,37 +13,30 @@ namespace ChatBot
     // - Add tasks
     // - View tasks
     // - Store task information in MySQL
+    // - Delete tasks
     internal class TaskManager
     {
 
-
-        // Creates an object of DatabaseConnection
-        // This allows this class to access the database
+        // Database connection object
         DatabaseConnection db = new DatabaseConnection();
 
 
 
-        // Method used to add a new cybersecurity task
+        // Adds a new task into MySQL
         public void AddTask
         (
             string title,
             string description,
-            DateTime reminders
+            DateTime reminder
         )
         {
 
-
-            // Creates a database connection
             using (MySqlConnection conn = db.GetConnection())
             {
 
-                // Opens the connection
                 conn.Open();
 
 
-
-                // SQL command used to insert a new task
-                // into the Tasks table
                 string query =
                 @"INSERT INTO Tasks
                 (Title, Description, ReminderDate)
@@ -51,37 +44,17 @@ namespace ChatBot
                 (@title,@description,@date)";
 
 
-
-                // Creates SQL command
                 MySqlCommand cmd =
                 new MySqlCommand(query, conn);
 
 
+                cmd.Parameters.AddWithValue("@title", title);
 
-                // Prevents SQL injection by using parameters
-                cmd.Parameters.AddWithValue
-                (
-                    "@title",
-                    title
-                );
+                cmd.Parameters.AddWithValue("@description", description);
+
+                cmd.Parameters.AddWithValue("@date", reminder);
 
 
-                cmd.Parameters.AddWithValue
-                (
-                    "@description",
-                    description
-                );
-
-
-                cmd.Parameters.AddWithValue
-                (
-                    "@date",
-                    reminders
-                );
-
-
-
-                // Executes the INSERT command
                 cmd.ExecuteNonQuery();
 
             }
@@ -91,47 +64,31 @@ namespace ChatBot
 
 
 
-
-        // Method used to retrieve all saved tasks
-        // from the database
+        // Gets all tasks for the DataGridView
         public DataTable GetTasks()
         {
-
 
             using (MySqlConnection conn = db.GetConnection())
             {
 
-
-                // Open database connection
                 conn.Open();
 
 
-
-                // SQL query to display all tasks
                 string query =
                 "SELECT * FROM Tasks";
 
 
-
-                // Adapter transfers database data
-                // into a DataTable for the GUI
                 MySqlDataAdapter adapter =
                 new MySqlDataAdapter(query, conn);
 
 
-
-                // Temporary storage for database results
                 DataTable table =
                 new DataTable();
 
 
-
-                // Fill table with database records
                 adapter.Fill(table);
 
 
-
-                // Return tasks to GUI
                 return table;
 
             }
@@ -139,5 +96,42 @@ namespace ChatBot
         }
 
 
+
+
+
+        // Deletes task from database
+        public void DeleteTask(int id)
+        {
+
+
+            using (MySqlConnection conn = db.GetConnection())
+            {
+
+                conn.Open();
+
+
+                string query =
+                "DELETE FROM Tasks WHERE TaskID=@id";
+
+
+
+                MySqlCommand cmd =
+                new MySqlCommand(query, conn);
+
+
+
+                cmd.Parameters.AddWithValue("@id", id);
+
+
+
+                cmd.ExecuteNonQuery();
+
+
+            }
+
+        }
+
+
     }
+
 }

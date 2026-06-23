@@ -53,6 +53,7 @@
             tabActivity = new TabPage();
             btnShowLogs = new Button();
             lstActivityLog = new ListBox();
+            btnDeleteTask = new Button();
             tabWindow.SuspendLayout();
             tabChat.SuspendLayout();
             tabTasks.SuspendLayout();
@@ -136,6 +137,7 @@
             // 
             // tabTasks
             // 
+            tabTasks.Controls.Add(btnDeleteTask);
             tabTasks.Controls.Add(dateTimePicker1);
             tabTasks.Controls.Add(dgvTasks);
             tabTasks.Controls.Add(btnAddTask);
@@ -151,7 +153,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(75, 127);
+            dateTimePicker1.Location = new Point(6, 6);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(300, 31);
             dateTimePicker1.TabIndex = 5;
@@ -159,15 +161,15 @@
             // dgvTasks
             // 
             dgvTasks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTasks.Location = new Point(446, 6);
+            dgvTasks.Location = new Point(337, 6);
             dgvTasks.Name = "dgvTasks";
             dgvTasks.RowHeadersWidth = 62;
-            dgvTasks.Size = new Size(360, 225);
+            dgvTasks.Size = new Size(607, 280);
             dgvTasks.TabIndex = 4;
             // 
             // btnAddTask
             // 
-            btnAddTask.Location = new Point(501, 249);
+            btnAddTask.Location = new Point(187, 133);
             btnAddTask.Name = "btnAddTask";
             btnAddTask.Size = new Size(112, 34);
             btnAddTask.TabIndex = 3;
@@ -177,16 +179,16 @@
             // 
             // txtDescription
             // 
-            txtDescription.Location = new Point(195, 69);
+            txtDescription.Location = new Point(156, 255);
             txtDescription.Name = "txtDescription";
             txtDescription.Size = new Size(150, 31);
             txtDescription.TabIndex = 1;
             // 
             // txtTaskTitle
             // 
-            txtTaskTitle.Location = new Point(195, 16);
+            txtTaskTitle.Location = new Point(6, 77);
             txtTaskTitle.Name = "txtTaskTitle";
-            txtTaskTitle.Size = new Size(150, 31);
+            txtTaskTitle.Size = new Size(293, 31);
             txtTaskTitle.TabIndex = 0;
             // 
             // tabQuiz
@@ -315,6 +317,15 @@
             lstActivityLog.Size = new Size(642, 279);
             lstActivityLog.TabIndex = 0;
             // 
+            // btnDeleteTask
+            // 
+            btnDeleteTask.Location = new Point(187, 179);
+            btnDeleteTask.Name = "btnDeleteTask";
+            btnDeleteTask.Size = new Size(112, 34);
+            btnDeleteTask.TabIndex = 6;
+            btnDeleteTask.Text = "Delete Task";
+            btnDeleteTask.UseVisualStyleBackColor = true;
+            // 
             // BotApp
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -368,5 +379,6 @@
         private Button btnStartQuiz;
         private Button btnShowLogs;
         private DateTimePicker dateTimePicker1;
+        private Button btnDeleteTask;
     }
 }
