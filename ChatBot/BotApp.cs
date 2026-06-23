@@ -107,7 +107,7 @@ namespace ChatBot
 
 
             btnNextQuestion.Visible = false;
-
+            btnPrevious.Visible = false;
 
         }
 
@@ -141,7 +141,11 @@ namespace ChatBot
             btnStartQuiz.Visible = false;
 
             btnNextQuestion.Visible = true;
+            btnPrevious.Visible = true;
 
+            // Hide score label when starting a new quiz
+            // Score will only appear when quiz finishes
+            lblScore.Text = "";
 
 
             // Add activity log
@@ -193,18 +197,32 @@ namespace ChatBot
             {
 
 
-                MessageBox.Show(
-                "Quiz completed. Your score: "
+                // Display final score on the label
+                lblScore.Text =
+                "Your final score: "
                 + quiz.GetScore()
-                + "/10");
+                + "/10";
 
 
+
+                // Show completion message
+                MessageBox.Show(
+                "Quiz completed!"
+                );
+
+
+
+                // Add activity log
                 logger.AddLog(
-                "Quiz completed");
+                "Quiz completed with score: "
+                + quiz.GetScore()
+                + "/10"
+                );
+
 
 
             }
-
+ 
 
         }
 
@@ -301,16 +319,16 @@ namespace ChatBot
             }
         }
         private void LoadTasks()
-          {
- 
-                   dgvTasks.DataSource =
-                   taskManager.GetTasks();
- 
-          }
-       
+        {
+
+            dgvTasks.DataSource =
+            taskManager.GetTasks();
+
+        }
+
 
         private void btnAddTask_Click(object sender, EventArgs e)
-        {   
+        {
             // Add task into MySQL database
             taskManager.AddTask(
 
@@ -318,7 +336,8 @@ namespace ChatBot
 
                 txtDescription.Text,
 
-                dateTimePicker1.Value
+                dtReminder.Value
+
 
             );
 
@@ -335,9 +354,163 @@ namespace ChatBot
             // Refresh task list after adding
             LoadTasks();
 
-        }
-           
 
+
+        }
+
+        // Check if user selected a row
+        private void btnDeleteTask_Click(object sender, EventArgs e)
+        {
+
+            // Check if the user selected a task
+            if (dgvTasks.SelectedRows.Count == 0)
+            {
+
+                MessageBox.Show(
+                    "Please select a task before deleting.",
+                    "No Task Selected",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+
+                return;
+
+            }
+
+
+
+            // Get the selected task ID
+            int taskID = Convert.ToInt32(
+                dgvTasks.SelectedRows[0]
+                .Cells["TaskID"].Value
+            );
+
+
+
+            // Ask user for confirmation before deleting
+            DialogResult confirm = MessageBox.Show(
+
+                "Are you sure you want to delete this task?\n\n" +
+                "This action cannot be undone.",
+
+                "Confirm Task Deletion",
+
+                MessageBoxButtons.YesNo,
+
+                MessageBoxIcon.Warning
+
+            );
+
+
+
+            // If user clicks YES
+            if (confirm == DialogResult.Yes)
+            {
+
+
+                try
+                {
+
+                    // Delete task from database
+                    taskManager.DeleteTask(taskID);
+
+
+
+                    // Record action in activity log
+                    logger.AddLog(
+                        "Deleted task ID: " + taskID
+                    );
+
+
+
+                    MessageBox.Show(
+
+                        "Task deleted successfully!",
+
+                        "Delete Complete",
+
+                        MessageBoxButtons.OK,
+
+                        MessageBoxIcon.Information
+
+                    );
+
+
+
+                    // Refresh the task list
+                    LoadTasks();
+
+
+                }
+
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(
+
+                        "Error deleting task:\n" + ex.Message,
+
+                        "Delete Error",
+
+                        MessageBoxButtons.OK,
+
+                        MessageBoxIcon.Error
+
+                    );
+
+                }
+
+
+            }
+
+
+            // If user clicks NO
+            else
+            {
+
+                MessageBox.Show(
+
+                    "Task deletion cancelled.",
+
+                    "Cancelled",
+
+                    MessageBoxButtons.OK,
+
+                    MessageBoxIcon.Information
+
+                );
+
+            }
+
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            // Move back one question
+            quiz.PreviousQuestion();
+
+
+            // Display previous question
+            lblQuestion.Text = quiz.GetQuestion();
+
+
+
+            // Reload answers
+            btnAnswerA.Text = quiz.GetAnswerA();
+
+            btnAnswerB.Text = quiz.GetAnswerB();
+
+            btnAnswerC.Text = quiz.GetAnswerC();
+
+            btnAnswerD.Text = quiz.GetAnswerD();
+
+
+
+            // Add activity log
+            logger.AddLog("Moved to previous quiz question");
+
+
+        }
     }
 
 

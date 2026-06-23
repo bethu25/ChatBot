@@ -36,12 +36,14 @@
             tabWindow = new TabControl();
             tabChat = new TabPage();
             tabTasks = new TabPage();
-            dateTimePicker1 = new DateTimePicker();
+            btnDeleteTask = new Button();
+            dtReminder = new DateTimePicker();
             dgvTasks = new DataGridView();
             btnAddTask = new Button();
             txtDescription = new TextBox();
             txtTaskTitle = new TextBox();
             tabQuiz = new TabPage();
+            btnPrevious = new Button();
             btnStartQuiz = new Button();
             btnNextQuestion = new Button();
             lblScore = new Label();
@@ -53,7 +55,6 @@
             tabActivity = new TabPage();
             btnShowLogs = new Button();
             lstActivityLog = new ListBox();
-            btnDeleteTask = new Button();
             tabWindow.SuspendLayout();
             tabChat.SuspendLayout();
             tabTasks.SuspendLayout();
@@ -93,7 +94,7 @@
             // 
             rtbChat.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rtbChat.BackColor = SystemColors.ControlText;
-            rtbChat.ForeColor = SystemColors.MenuText;
+            rtbChat.ForeColor = SystemColors.Window;
             rtbChat.Location = new Point(6, 8);
             rtbChat.Name = "rtbChat";
             rtbChat.ReadOnly = true;
@@ -138,7 +139,7 @@
             // tabTasks
             // 
             tabTasks.Controls.Add(btnDeleteTask);
-            tabTasks.Controls.Add(dateTimePicker1);
+            tabTasks.Controls.Add(dtReminder);
             tabTasks.Controls.Add(dgvTasks);
             tabTasks.Controls.Add(btnAddTask);
             tabTasks.Controls.Add(txtDescription);
@@ -151,12 +152,22 @@
             tabTasks.Text = "Task Assistant";
             tabTasks.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // btnDeleteTask
             // 
-            dateTimePicker1.Location = new Point(6, 6);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(300, 31);
-            dateTimePicker1.TabIndex = 5;
+            btnDeleteTask.Location = new Point(161, 237);
+            btnDeleteTask.Name = "btnDeleteTask";
+            btnDeleteTask.Size = new Size(112, 34);
+            btnDeleteTask.TabIndex = 6;
+            btnDeleteTask.Text = "Delete Task";
+            btnDeleteTask.UseVisualStyleBackColor = true;
+            btnDeleteTask.Click += btnDeleteTask_Click;
+            // 
+            // dtReminder
+            // 
+            dtReminder.Location = new Point(6, 6);
+            dtReminder.Name = "dtReminder";
+            dtReminder.Size = new Size(300, 31);
+            dtReminder.TabIndex = 5;
             // 
             // dgvTasks
             // 
@@ -164,12 +175,12 @@
             dgvTasks.Location = new Point(337, 6);
             dgvTasks.Name = "dgvTasks";
             dgvTasks.RowHeadersWidth = 62;
-            dgvTasks.Size = new Size(607, 280);
+            dgvTasks.Size = new Size(667, 280);
             dgvTasks.TabIndex = 4;
             // 
             // btnAddTask
             // 
-            btnAddTask.Location = new Point(187, 133);
+            btnAddTask.Location = new Point(17, 237);
             btnAddTask.Name = "btnAddTask";
             btnAddTask.Size = new Size(112, 34);
             btnAddTask.TabIndex = 3;
@@ -179,20 +190,21 @@
             // 
             // txtDescription
             // 
-            txtDescription.Location = new Point(156, 255);
+            txtDescription.Location = new Point(5, 132);
             txtDescription.Name = "txtDescription";
-            txtDescription.Size = new Size(150, 31);
+            txtDescription.Size = new Size(301, 31);
             txtDescription.TabIndex = 1;
             // 
             // txtTaskTitle
             // 
             txtTaskTitle.Location = new Point(6, 77);
             txtTaskTitle.Name = "txtTaskTitle";
-            txtTaskTitle.Size = new Size(293, 31);
+            txtTaskTitle.Size = new Size(201, 31);
             txtTaskTitle.TabIndex = 0;
             // 
             // tabQuiz
             // 
+            tabQuiz.Controls.Add(btnPrevious);
             tabQuiz.Controls.Add(btnStartQuiz);
             tabQuiz.Controls.Add(btnNextQuestion);
             tabQuiz.Controls.Add(lblScore);
@@ -209,6 +221,16 @@
             tabQuiz.Text = "Quiz";
             tabQuiz.UseVisualStyleBackColor = true;
             // 
+            // btnPrevious
+            // 
+            btnPrevious.Location = new Point(512, 271);
+            btnPrevious.Name = "btnPrevious";
+            btnPrevious.Size = new Size(154, 37);
+            btnPrevious.TabIndex = 15;
+            btnPrevious.Text = "Previous";
+            btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.Click += btnPrevious_Click;
+            // 
             // btnStartQuiz
             // 
             btnStartQuiz.Location = new Point(343, 274);
@@ -221,7 +243,7 @@
             // 
             // btnNextQuestion
             // 
-            btnNextQuestion.Location = new Point(503, 274);
+            btnNextQuestion.Location = new Point(711, 271);
             btnNextQuestion.Name = "btnNextQuestion";
             btnNextQuestion.Size = new Size(154, 34);
             btnNextQuestion.TabIndex = 13;
@@ -317,15 +339,6 @@
             lstActivityLog.Size = new Size(642, 279);
             lstActivityLog.TabIndex = 0;
             // 
-            // btnDeleteTask
-            // 
-            btnDeleteTask.Location = new Point(187, 179);
-            btnDeleteTask.Name = "btnDeleteTask";
-            btnDeleteTask.Size = new Size(112, 34);
-            btnDeleteTask.TabIndex = 6;
-            btnDeleteTask.Text = "Delete Task";
-            btnDeleteTask.UseVisualStyleBackColor = true;
-            // 
             // BotApp
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -378,7 +391,8 @@
         private TextBox txtDescription;
         private Button btnStartQuiz;
         private Button btnShowLogs;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtReminder;
         private Button btnDeleteTask;
+        private Button btnPrevious;
     }
 }

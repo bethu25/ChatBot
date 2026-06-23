@@ -239,7 +239,21 @@ namespace ChatBot
 
         }
 
+        // Moves back to previous question
+        public void PreviousQuestion()
+        {
 
+
+            // Prevent going before question 1
+            if (currentQuestion > 0)
+            {
+
+                currentQuestion--;
+
+            }
+
+
+        }
 
 
         // Returns final score
