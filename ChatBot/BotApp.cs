@@ -222,7 +222,7 @@ namespace ChatBot
 
 
             }
- 
+
 
         }
 
@@ -512,7 +512,51 @@ namespace ChatBot
 
         }
 
+        private void btnCompleteTask_Click(object sender, EventArgs e)
+        {
+            // Check if user selected a task
+            if (dgvTasks.SelectedRows.Count == 0)
+            {
 
+                MessageBox.Show(
+                "Please select a task first."
+                );
+
+                return;
+
+            }
+
+
+
+            // Get selected TaskID
+            int id =
+            Convert.ToInt32(
+            dgvTasks.SelectedRows[0].Cells["TaskID"].Value
+            );
+
+
+
+            // Update database
+            taskManager.CompleteTask(id);
+
+
+
+            // Add activity log
+            logger.AddLog(
+            "Task completed ID: " + id
+            );
+
+
+
+            MessageBox.Show(
+            "Task marked as completed!"
+            );
+
+ 
+            // Refresh tasks
+            LoadTasks();
+
+        }
     }
 
 

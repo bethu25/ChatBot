@@ -55,6 +55,7 @@
             tabActivity = new TabPage();
             btnShowLogs = new Button();
             lstActivityLog = new ListBox();
+            btnCompleteTask = new Button();
             tabWindow.SuspendLayout();
             tabChat.SuspendLayout();
             tabTasks.SuspendLayout();
@@ -94,7 +95,6 @@
             // 
             rtbChat.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rtbChat.BackColor = SystemColors.ControlText;
-            rtbChat.Cursor = Cursors.Default;
             rtbChat.ForeColor = SystemColors.Window;
             rtbChat.Location = new Point(6, 8);
             rtbChat.Name = "rtbChat";
@@ -139,6 +139,7 @@
             // 
             // tabTasks
             // 
+            tabTasks.Controls.Add(btnCompleteTask);
             tabTasks.Controls.Add(btnDeleteTask);
             tabTasks.Controls.Add(dtReminder);
             tabTasks.Controls.Add(dgvTasks);
@@ -155,7 +156,7 @@
             // 
             // btnDeleteTask
             // 
-            btnDeleteTask.Location = new Point(161, 237);
+            btnDeleteTask.Location = new Point(17, 277);
             btnDeleteTask.Name = "btnDeleteTask";
             btnDeleteTask.Size = new Size(112, 34);
             btnDeleteTask.TabIndex = 6;
@@ -340,6 +341,16 @@
             lstActivityLog.Size = new Size(642, 279);
             lstActivityLog.TabIndex = 0;
             // 
+            // btnCompleteTask
+            // 
+            btnCompleteTask.Location = new Point(152, 257);
+            btnCompleteTask.Name = "btnCompleteTask";
+            btnCompleteTask.Size = new Size(154, 34);
+            btnCompleteTask.TabIndex = 7;
+            btnCompleteTask.Text = "Complete Task";
+            btnCompleteTask.UseVisualStyleBackColor = true;
+            btnCompleteTask.Click += btnCompleteTask_Click;
+            // 
             // BotApp
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -395,5 +406,6 @@
         private DateTimePicker dtReminder;
         private Button btnDeleteTask;
         private Button btnPrevious;
+        private Button btnCompleteTask;
     }
 }
