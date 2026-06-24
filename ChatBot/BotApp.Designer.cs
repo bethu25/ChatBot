@@ -84,7 +84,7 @@
             lblTitle.BackColor = SystemColors.ActiveCaptionText;
             lblTitle.Font = new Font("Showcard Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.Cyan;
-            lblTitle.Location = new Point(506, 19);
+            lblTitle.Location = new Point(728, 9);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(334, 26);
             lblTitle.TabIndex = 1;
@@ -94,6 +94,7 @@
             // 
             rtbChat.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             rtbChat.BackColor = SystemColors.ControlText;
+            rtbChat.Cursor = Cursors.Default;
             rtbChat.ForeColor = SystemColors.Window;
             rtbChat.Location = new Point(6, 8);
             rtbChat.Name = "rtbChat";
@@ -172,10 +173,10 @@
             // dgvTasks
             // 
             dgvTasks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTasks.Location = new Point(337, 6);
+            dgvTasks.Location = new Point(312, 6);
             dgvTasks.Name = "dgvTasks";
             dgvTasks.RowHeadersWidth = 62;
-            dgvTasks.Size = new Size(667, 280);
+            dgvTasks.Size = new Size(692, 335);
             dgvTasks.TabIndex = 4;
             // 
             // btnAddTask

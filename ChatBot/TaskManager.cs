@@ -131,7 +131,50 @@ namespace ChatBot
 
         }
 
+        // Method used to mark a task as completed
+        // Updates the database Completed column to true
+        public void CompleteTask(int taskID)
+        {
+
+
+            // Creates database connection
+            using (MySqlConnection conn = db.GetConnection())
+            {
+
+
+                // Opens connection
+                conn.Open();
+
+
+
+                // SQL command to update task status
+                string query =
+                "UPDATE Tasks SET Completed=true WHERE TaskID=@id";
+
+
+
+                // Creates SQL command
+                MySqlCommand cmd =
+                new MySqlCommand(query, conn);
+
+
+
+                // Prevent SQL injection
+                cmd.Parameters.AddWithValue(
+                    "@id",
+                    taskID
+                );
+
+
+
+                // Executes update
+                cmd.ExecuteNonQuery();
+
+
+            }
+
+
+        }
 
     }
-
 }

@@ -200,7 +200,47 @@ namespace ChatBot
                 return "Please ask about a cybersecurity topic first.";
             }
 
-             // PASSWORD
+            // TASK ASSISTANT NLP DETECTION
+
+
+            else if (message.Contains("add task") ||
+                    message.Contains("create task") ||
+                    message.Contains("remind me"))
+            {
+
+
+                lastTopic = "task";
+
+
+                return "I can help you create a cybersecurity task. Open the Task Assistant tab to add your task.";
+
+            }
+
+
+
+            else if (message.Contains("show tasks") ||
+                    message.Contains("my tasks") ||
+                    message.Contains("view tasks"))
+            {
+
+
+                return "You can view all your saved cybersecurity tasks in the Task Assistant tab.";
+
+            }
+
+
+
+
+            else if (message.Contains("complete task") ||
+                    message.Contains("finish task"))
+            {
+
+
+                return "Select the task from the Task Assistant tab and click Complete.";
+
+            }
+
+            // PASSWORD
             else if (message.Contains("password"))
             {
                 lastTopic = "password";
@@ -326,6 +366,8 @@ namespace ChatBot
             {
                 return "I am not sure I understand. Can you try rephrasing?";
             }
+
+
         }
     }
 }
