@@ -424,17 +424,375 @@ Dictionary<string, List<string>>
 ```
 
 ---
+Part 3 Advanced Features
 
-# Conclusion
+Task 1: Cybersecurity Task Assistant
 
-The Cybersecurity Awareness Bot successfully demonstrates:
+The chatbot includes a task management system that helps users organise cybersecurity activities.
 
-* GUI development
-* Cybersecurity education
-* Sentiment detection
-* Memory and recall
-* Dynamic responses
-* Conversation flow
-* Object-Oriented Programming
+Examples:
 
-The chatbot provides an engaging and beginner friendly way for users to learn cybersecurity awareness.
+Enable two-factor authentication
+Update passwords
+Review privacy settings
+Check account security
+Database Integration
+
+MySQL is used to store tasks permanently.
+
+Database:
+
+CyberBotDB
+
+Table:
+
+Tasks
+
+Fields:
+
+Column	Description
+TaskID	Unique task identifier
+Title	Task name
+Description	Task details
+ReminderDate	Reminder date
+Completed	Task completion status
+
+Example:
+
+Task Title:
+
+Enable Two-Factor Authentication
+
+
+Description:
+
+Enable 2FA on my banking account
+
+
+Reminder:
+
+2026-07-01
+Task Management Functions
+
+Users can:
+
+Add tasks
+View tasks
+Delete tasks
+Mark tasks as completed
+
+Example:
+
+User:
+
+Add task - Update my password
+
+
+Bot:
+
+Task added successfully.
+Task 2: Cybersecurity Mini Game Quiz
+
+The chatbot contains an interactive cybersecurity quiz.
+
+Features:
+
+10 cybersecurity questions
+Multiple choice answers
+Score tracking
+Immediate feedback
+Final score display
+
+Topics include:
+
+Phishing
+Password safety
+Malware
+Privacy
+Social engineering
+
+Example:
+
+Question:
+
+What makes a strong password?
+
+
+A) Your birthday
+
+B) Password123
+
+C) Letters numbers and symbols
+
+
+Answer:
+
+C
+
+
+Feedback:
+
+Correct! Strong passwords improve security.
+Task 3: NLP Simulation
+
+The chatbot uses basic Natural Language Processing simulation.
+
+It recognises different user commands using:
+
+String manipulation
+Keyword detection
+Contains() matching
+
+Examples:
+
+User:
+
+Remind me to update my password
+
+Bot:
+
+I can help you create a cybersecurity task.
+Open the Task Assistant tab.
+
+User:
+
+Show my tasks
+
+Bot:
+
+You can view your saved cybersecurity tasks
+in the Task Assistant tab.
+Task 4: Activity Log Feature
+
+The chatbot records important actions.
+
+The activity log stores:
+
+Tasks added
+Tasks completed
+Quiz started
+Quiz completed
+NLP commands recognised
+
+Example:
+
+Activity Log:
+
+1. Task added: Enable 2FA
+
+2. Quiz completed score 8/10
+
+3. Task marked completed
+
+The user can review recent chatbot activity.
+
+Technologies Used
+Programming Language
+C#
+Framework
+.NET Windows Forms
+Database
+MySQL
+Libraries
+System.Collections.Generic
+
+System.Media
+
+System.Windows.Forms
+
+MySql.Data
+Project Structure
+BotApp.cs
+
+Responsible for:
+
+GUI controls
+Button events
+Displaying messages
+Connecting features together
+CyberBot.cs
+
+Responsible for:
+
+Chatbot logic
+Keyword recognition
+NLP simulation
+Memory
+Sentiment detection
+ResponseManager.cs
+
+Responsible for:
+
+Cybersecurity definitions
+Tips
+Random responses
+TaskManager.cs
+
+Responsible for:
+
+Adding tasks
+Viewing tasks
+Deleting tasks
+Completing tasks
+MySQL communication
+QuizManager.cs
+
+Responsible for:
+
+Quiz questions
+Answers
+Score calculation
+ActivityLogger.cs
+
+Responsible for:
+
+Recording chatbot actions
+Displaying activity history
+DatabaseConnection.cs
+
+Responsible for:
+
+Connecting C# application with MySQL database
+Setup Instructions
+Step 1: Open Project
+
+Open using:
+
+Visual Studio 2022
+Step 2: Install MySQL Package
+
+Install:
+
+MySql.Data
+
+using NuGet Package Manager.
+
+Step 3: Create Database
+
+Run:
+
+CREATE DATABASE CyberBotDB;
+
+Select database:
+
+USE CyberBotDB;
+
+Create table:
+
+CREATE TABLE Tasks
+(
+TaskID INT AUTO_INCREMENT PRIMARY KEY,
+
+Title VARCHAR(100),
+
+Description VARCHAR(255),
+
+ReminderDate DATE,
+
+Completed BOOLEAN DEFAULT FALSE
+);
+Step 4: Add Voice File
+
+Create folder:
+
+Assets
+
+Add:
+
+Greeting.wav
+Step 5: Build Solution
+
+Visual Studio:
+
+Build
+>
+Build Solution
+
+Shortcut:
+
+CTRL + SHIFT + B
+Step 6: Run Application
+
+Press:
+
+F5
+How To Use
+Starting Application
+
+When launched:
+
+User enters name
+Bot remembers user name
+Welcome message appears
+
+Example:
+
+Hello John!
+Welcome to the Cybersecurity Awareness Bot.
+Example Commands
+Cybersecurity Questions
+What is phishing?
+Tell me about passwords
+Memory Commands
+What is my name?
+What is my favourite topic?
+Task Assistant
+Add task
+Show tasks
+Complete task
+Quiz
+
+Open:
+
+Quiz Tab
+
+Click:
+
+Start Quiz
+Activity Log
+
+Open:
+
+Activity Log Tab
+Object-Oriented Programming Concepts Used
+Classes
+BotApp
+CyberBot
+ResponseManager
+TaskManager
+QuizManager
+ActivityLogger
+Encapsulation
+
+Data is controlled through methods.
+
+Examples:
+
+SetUserName()
+
+GetResponse()
+
+AddTask()
+
+CompleteTask()
+Collections
+
+Used:
+
+List
+
+Dictionary
+Conclusion
+
+The Cybersecurity Awareness Bot demonstrates:
+
+GUI application development
+Database integration
+Cybersecurity education
+NLP simulation
+Task management
+Quiz interaction
+Activity tracking
+Object-Oriented Programming
+
+The application provides users with an interactive platform to improve cybersecurity awareness and practise safer online behaviour.
