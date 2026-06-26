@@ -424,176 +424,255 @@ Dictionary<string, List<string>>
 ```
 
 ---
-Part 3 Advanced Features
+# Part 3 - Advanced Features
 
-Task 1: Cybersecurity Task Assistant
+This section expands the Cybersecurity Awareness Bot by adding advanced functionality, including task management, database integration, a cybersecurity quiz, NLP simulation, and activity tracking.
 
-The chatbot includes a task management system that helps users organise cybersecurity activities.
+# 1. Cybersecurity Task Assistant
 
-Examples:
+## Overview
 
-Enable two-factor authentication
-Update passwords
-Review privacy settings
-Check account security
-Database Integration
+The chatbot includes a cybersecurity task management system that helps users organise and track important security activities.
 
-MySQL is used to store tasks permanently.
+Users can create tasks such as:
 
-Database:
+* Enable two-factor authentication
+* Update passwords
+* Review privacy settings
+* Check account security
 
+---
+
+## Database Integration
+
+MySQL is used to permanently store cybersecurity tasks.
+
+### Database
+
+```
 CyberBotDB
+```
 
-Table:
+### Table
 
+```
 Tasks
+```
 
-Fields:
+### Database Fields
 
-Column	Description
-TaskID	Unique task identifier
-Title	Task name
-Description	Task details
-ReminderDate	Reminder date
-Completed	Task completion status
+| Column       | Description            |
+| ------------ | ---------------------- |
+| TaskID       | Unique task identifier |
+| Title        | Task name              |
+| Description  | Task details           |
+| ReminderDate | Task reminder date     |
+| Completed    | Task completion status |
 
-Example:
+---
 
-Task Title:
+## Example Task
 
+### Task Title
+
+```
 Enable Two-Factor Authentication
+```
 
+### Description
 
-Description:
-
+```
 Enable 2FA on my banking account
+```
 
+### Reminder
 
-Reminder:
-
+```
 2026-07-01
-Task Management Functions
+```
+
+---
+
+## Task Management Functions
 
 Users can:
 
-Add tasks
-View tasks
-Delete tasks
-Mark tasks as completed
+* Add tasks
+* View tasks
+* Delete tasks
+* Mark tasks as completed
 
-Example:
+### Example
 
 User:
 
+```
 Add task - Update my password
-
+```
 
 Bot:
 
+```
 Task added successfully.
-Task 2: Cybersecurity Mini Game Quiz
+```
 
-The chatbot contains an interactive cybersecurity quiz.
+---
 
-Features:
+# 2. Cybersecurity Mini Game Quiz
 
-10 cybersecurity questions
-Multiple choice answers
-Score tracking
-Immediate feedback
-Final score display
+## Overview
 
-Topics include:
+The chatbot contains an interactive cybersecurity quiz designed to test the user's cybersecurity knowledge.
 
-Phishing
-Password safety
-Malware
-Privacy
-Social engineering
+## Features
 
-Example:
+The quiz includes:
 
-Question:
+* 10 cybersecurity questions
+* Multiple choice answers
+* Score tracking
+* Immediate feedback
+* Final score display
 
+## Topics Covered
+
+* Phishing
+* Password safety
+* Malware
+* Privacy
+* Social engineering
+
+---
+
+## Example Question
+
+```
 What makes a strong password?
+```
 
+Options:
 
+```
 A) Your birthday
 
 B) Password123
 
 C) Letters numbers and symbols
-
+```
 
 Answer:
 
+```
 C
-
+```
 
 Feedback:
 
+```
 Correct! Strong passwords improve security.
-Task 3: NLP Simulation
+```
 
-The chatbot uses basic Natural Language Processing simulation.
+---
 
-It recognises different user commands using:
+# 3. Natural Language Processing (NLP) Simulation
 
-String manipulation
-Keyword detection
-Contains() matching
+## Overview
 
-Examples:
+The chatbot uses a basic NLP simulation system to understand different user commands.
+
+The chatbot recognises user requests using:
+
+* String manipulation
+* Keyword detection
+* Contains() matching
+
+---
+
+## Examples
 
 User:
 
+```
 Remind me to update my password
+```
 
 Bot:
 
+```
 I can help you create a cybersecurity task.
 Open the Task Assistant tab.
+```
 
 User:
 
+```
 Show my tasks
+```
 
 Bot:
 
+```
 You can view your saved cybersecurity tasks
 in the Task Assistant tab.
-Task 4: Activity Log Feature
+```
 
-The chatbot records important actions.
+---
 
-The activity log stores:
+# 4. Activity Log Feature
 
-Tasks added
-Tasks completed
-Quiz started
-Quiz completed
-NLP commands recognised
+## Overview
 
-Example:
+The chatbot records important actions performed during the user's interaction.
+
+## The Activity Log Stores:
+
+* Tasks added
+* Tasks completed
+* Quiz started
+* Quiz completed
+* NLP commands recognised
+
+---
+
+## Example
 
 Activity Log:
 
+```
 1. Task added: Enable 2FA
 
 2. Quiz completed score 8/10
 
 3. Task marked completed
+```
 
-The user can review recent chatbot activity.
+Users can review recent chatbot activity through the Activity Log tab.
 
-Technologies Used
-Programming Language
+---
+
+# Technologies Used
+
+## Programming Language
+
+```
 C#
-Framework
+```
+
+## Framework
+
+```
 .NET Windows Forms
-Database
+```
+
+## Database
+
+```
 MySQL
-Libraries
+```
+
+## Libraries
+
+```
 System.Collections.Generic
 
 System.Media
@@ -601,84 +680,129 @@ System.Media
 System.Windows.Forms
 
 MySql.Data
-Project Structure
-BotApp.cs
+```
+
+---
+
+# Project Structure
+
+## BotApp.cs
 
 Responsible for:
 
-GUI controls
-Button events
-Displaying messages
-Connecting features together
-CyberBot.cs
+* GUI controls
+* Button events
+* Displaying conversations
+* Connecting all features together
+
+---
+
+## CyberBot.cs
 
 Responsible for:
 
-Chatbot logic
-Keyword recognition
-NLP simulation
-Memory
-Sentiment detection
-ResponseManager.cs
+* Chatbot logic
+* Keyword recognition
+* NLP simulation
+* Memory
+* Sentiment detection
+
+---
+
+## ResponseManager.cs
 
 Responsible for:
 
-Cybersecurity definitions
-Tips
-Random responses
-TaskManager.cs
+* Cybersecurity definitions
+* Security tips
+* Random responses
+
+---
+
+## TaskManager.cs
 
 Responsible for:
 
-Adding tasks
-Viewing tasks
-Deleting tasks
-Completing tasks
-MySQL communication
-QuizManager.cs
+* Adding tasks
+* Viewing tasks
+* Deleting tasks
+* Completing tasks
+* MySQL communication
+
+---
+
+## QuizManager.cs
 
 Responsible for:
 
-Quiz questions
-Answers
-Score calculation
-ActivityLogger.cs
+* Quiz questions
+* Answer options
+* Score calculation
+
+---
+
+## ActivityLogger.cs
 
 Responsible for:
 
-Recording chatbot actions
-Displaying activity history
-DatabaseConnection.cs
+* Recording chatbot actions
+* Displaying activity history
+
+---
+
+## DatabaseConnection.cs
 
 Responsible for:
 
-Connecting C# application with MySQL database
-Setup Instructions
-Step 1: Open Project
+* Connecting the C# application with MySQL
 
-Open using:
+---
 
+# Setup Instructions
+
+## Step 1 - Open Project
+
+Open the project using:
+
+```
 Visual Studio 2022
-Step 2: Install MySQL Package
+```
+
+---
+
+## Step 2 - Install MySQL Package
 
 Install:
 
+```
 MySql.Data
+```
 
-using NuGet Package Manager.
+Using:
 
-Step 3: Create Database
+```
+NuGet Package Manager
+```
+
+---
+
+## Step 3 - Create Database
 
 Run:
 
+```sql
 CREATE DATABASE CyberBotDB;
+```
 
 Select database:
 
+```sql
 USE CyberBotDB;
+```
 
 Create table:
 
+```sql
 CREATE TABLE Tasks
 (
 TaskID INT AUTO_INCREMENT PRIMARY KEY,
@@ -691,83 +815,161 @@ ReminderDate DATE,
 
 Completed BOOLEAN DEFAULT FALSE
 );
-Step 4: Add Voice File
+```
+
+---
+
+## Step 4 - Add Voice File
 
 Create folder:
 
+```
 Assets
+```
 
 Add:
 
+```
 Greeting.wav
-Step 5: Build Solution
+```
+
+---
+
+## Step 5 - Build Solution
 
 Visual Studio:
 
+```
 Build
 >
 Build Solution
+```
 
 Shortcut:
 
+```
 CTRL + SHIFT + B
-Step 6: Run Application
+```
+
+---
+
+## Step 6 - Run Application
 
 Press:
 
+```
 F5
-How To Use
-Starting Application
+```
+
+---
+
+# How To Use The Application
+
+## Starting The Application
 
 When launched:
 
-User enters name
-Bot remembers user name
-Welcome message appears
+1. User enters name
+2. Bot remembers the user name
+3. Welcome message appears
 
 Example:
 
+```
 Hello John!
 Welcome to the Cybersecurity Awareness Bot.
-Example Commands
-Cybersecurity Questions
+```
+
+---
+
+# Example Commands
+
+## Cybersecurity Questions
+
+```
 What is phishing?
+```
+
+```
 Tell me about passwords
-Memory Commands
+```
+
+---
+
+## Memory Commands
+
+```
 What is my name?
+```
+
+```
 What is my favourite topic?
-Task Assistant
+```
+
+---
+
+## Task Assistant
+
+```
 Add task
+```
+
+```
 Show tasks
+```
+
+```
 Complete task
-Quiz
+```
+
+---
+
+## Quiz
 
 Open:
 
+```
 Quiz Tab
+```
 
 Click:
 
+```
 Start Quiz
-Activity Log
+```
+
+---
+
+## Activity Log
 
 Open:
 
+```
 Activity Log Tab
-Object-Oriented Programming Concepts Used
-Classes
-BotApp
-CyberBot
-ResponseManager
-TaskManager
-QuizManager
-ActivityLogger
-Encapsulation
+```
 
-Data is controlled through methods.
+---
+
+# Object-Oriented Programming Concepts Used
+
+## Classes
+
+* BotApp
+* CyberBot
+* ResponseManager
+* TaskManager
+* QuizManager
+* ActivityLogger
+
+---
+
+## Encapsulation
+
+Data is controlled using methods.
 
 Examples:
 
+```
 SetUserName()
 
 GetResponse()
@@ -775,24 +977,33 @@ GetResponse()
 AddTask()
 
 CompleteTask()
-Collections
+```
+
+---
+
+## Collections
 
 Used:
 
+```
 List
 
 Dictionary
-Conclusion
+```
+
+---
+
+# Conclusion
 
 The Cybersecurity Awareness Bot demonstrates:
 
-GUI application development
-Database integration
-Cybersecurity education
-NLP simulation
-Task management
-Quiz interaction
-Activity tracking
-Object-Oriented Programming
+* GUI application development
+* Database integration
+* Cybersecurity education
+* NLP simulation
+* Task management
+* Quiz interaction
+* Activity tracking
+* Object-Oriented Programming
 
 The application provides users with an interactive platform to improve cybersecurity awareness and practise safer online behaviour.
