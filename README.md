@@ -472,24 +472,7 @@ Tasks
 ---
 
 ## Example Task
-
-### Task Title
-
-```
-Enable Two-Factor Authentication
-```
-
-### Description
-
-```
-Enable 2FA on my banking account
-```
-
-### Reminder
-
-```
-2026-07-01
-```
+![image alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20150726.png?raw=true)
 
 ---
 
