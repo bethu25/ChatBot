@@ -522,31 +522,9 @@ The quiz includes:
 
 ## Example Question
 
-```
-What makes a strong password?
-```
+![Image Alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20144323.png?raw=true)
 
-Options:
-
-```
-A) Your birthday
-
-B) Password123
-
-C) Letters numbers and symbols
-```
-
-Answer:
-
-```
-C
-```
-
-Feedback:
-
-```
-Correct! Strong passwords improve security.
-```
+![Image Alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20144405.png?raw=true)
 
 ---
 
