@@ -564,19 +564,8 @@ The chatbot records important actions performed during the user's interaction.
 ---
 
 ## Example
-
-Activity Log:
-
-```
-1. Task added: Enable 2FA
-
-2. Quiz completed score 8/10
-
-3. Task marked completed
-```
-
-Users can review recent chatbot activity through the Activity Log tab.
-
+![Image Alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20145927.png?raw=true)
+ 
 ---
 
 # Technologies Used
