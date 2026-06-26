@@ -543,33 +543,8 @@ The chatbot recognises user requests using:
 ---
 
 ## Examples
-
-User:
-
-```
-Remind me to update my password
-```
-
-Bot:
-
-```
-I can help you create a cybersecurity task.
-Open the Task Assistant tab.
-```
-
-User:
-
-```
-Show my tasks
-```
-
-Bot:
-
-```
-You can view your saved cybersecurity tasks
-in the Task Assistant tab.
-```
-
+![Image Alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20145616.png?raw=true)
+ 
 ---
 
 # 4. Activity Log Feature
