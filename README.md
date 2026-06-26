@@ -472,24 +472,7 @@ Tasks
 ---
 
 ## Example Task
-
-### Task Title
-
-```
-Enable Two-Factor Authentication
-```
-
-### Description
-
-```
-Enable 2FA on my banking account
-```
-
-### Reminder
-
-```
-2026-07-01
-```
+![image alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20150726.png?raw=true)
 
 ---
 
@@ -503,19 +486,12 @@ Users can:
 * Mark tasks as completed
 
 ### Example
+![image alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20144203.png?raw=true)
 
-User:
+![image alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20143937.png?raw=true)
 
-```
-Add task - Update my password
-```
-
-Bot:
-
-```
-Task added successfully.
-```
-
+![image alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20143947.png?raw=true)
+ 
 ---
 
 # 2. Cybersecurity Mini Game Quiz
@@ -546,31 +522,9 @@ The quiz includes:
 
 ## Example Question
 
-```
-What makes a strong password?
-```
+![Image Alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20144323.png?raw=true)
 
-Options:
-
-```
-A) Your birthday
-
-B) Password123
-
-C) Letters numbers and symbols
-```
-
-Answer:
-
-```
-C
-```
-
-Feedback:
-
-```
-Correct! Strong passwords improve security.
-```
+![Image Alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20144405.png?raw=true)
 
 ---
 
@@ -589,33 +543,8 @@ The chatbot recognises user requests using:
 ---
 
 ## Examples
-
-User:
-
-```
-Remind me to update my password
-```
-
-Bot:
-
-```
-I can help you create a cybersecurity task.
-Open the Task Assistant tab.
-```
-
-User:
-
-```
-Show my tasks
-```
-
-Bot:
-
-```
-You can view your saved cybersecurity tasks
-in the Task Assistant tab.
-```
-
+![Image Alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20145616.png?raw=true)
+ 
 ---
 
 # 4. Activity Log Feature
@@ -635,19 +564,8 @@ The chatbot records important actions performed during the user's interaction.
 ---
 
 ## Example
-
-Activity Log:
-
-```
-1. Task added: Enable 2FA
-
-2. Quiz completed score 8/10
-
-3. Task marked completed
-```
-
-Users can review recent chatbot activity through the Activity Log tab.
-
+![Image Alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20145927.png?raw=true)
+ 
 ---
 
 # Technologies Used
