@@ -486,19 +486,12 @@ Users can:
 * Mark tasks as completed
 
 ### Example
+![image alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20144203.png?raw=true)
 
-User:
+![image alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20143937.png?raw=true)
 
-```
-Add task - Update my password
-```
-
-Bot:
-
-```
-Task added successfully.
-```
-
+![image alt](https://github.com/bethu25/ChatBot/blob/master/Screenshot%202026-06-26%20143947.png?raw=true)
+ 
 ---
 
 # 2. Cybersecurity Mini Game Quiz
